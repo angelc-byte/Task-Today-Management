@@ -1,4 +1,35 @@
-# Tasks for Today Management System TSA2
+# Tasks for Today Management System
+
+This repository contains the continuing IT0049 Tasks for Today assessments:
+
+- **TSA2:** CodeIgniter 4 full CRUD and authentication project in the repository root.
+- **TSA3:** Laravel migration, seeder, Eloquent, and Blade continuation in [`tsa3-laravel`](tsa3-laravel/).
+
+## TSA3 Laravel continuation
+
+The Laravel version includes a polished responsive interface and the four required pages:
+
+- `/` displays only tasks scheduled for today.
+- `/tasks` displays every seeded task ordered by date.
+- `/profile` displays the single seeded account owner and profile photo.
+- `/about` identifies the developer and explains the implementation.
+
+It includes the required `tasks` and `users` migrations, Task and User Eloquent models, nine repeatable task records spanning multiple dates, exactly one user, controllers, a shared Blade layout, automated feature tests, and complete local setup instructions.
+
+To run TSA3:
+
+```powershell
+cd tsa3-laravel
+composer install
+Copy-Item .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+```
+
+See [`tsa3-laravel/README.md`](tsa3-laravel/README.md) for detailed setup, verification, and hosting guidance.
+
+## TSA2 CodeIgniter project
 
 CodeIgniter 4 application completed for IT0049 Technical Summative Assessment 2. It extends the TSA1 task manager with validated full CRUD, authentication, protected management actions, and soft deletion.
 
