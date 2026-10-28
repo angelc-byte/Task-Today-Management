@@ -19,7 +19,7 @@ class PagesTest extends TestCase
     public function test_all_required_pages_are_available(): void
     {
         $this->get('/')->assertOk()->assertSee('Make today')->assertSee('Finish the Eloquent model activity');
-        $this->get('/tasks')->assertOk()->assertSee('Every task')->assertSee('Submit the GitHub and hosted links');
+        $this->get('/tasks')->assertOk()->assertSee('Every task')->assertSee('Submit the GitHub repository link');
         $this->get('/profile')->assertOk()->assertSee('Angel C. Tolentino')->assertSee('angeltolentino');
         $this->get('/about')->assertOk()->assertSee('Less clutter')->assertSee('Angel C. Tolentino');
     }
@@ -35,7 +35,7 @@ class PagesTest extends TestCase
             'Read the TSA3 activity guide',
             'Finish the Eloquent model activity',
             'Practice Eloquent date filtering',
-            'Submit the GitHub and hosted links',
+            'Submit the GitHub repository link',
         ]);
         $this->assertDatabaseCount('tasks', 9);
     }

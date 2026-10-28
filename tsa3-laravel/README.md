@@ -41,6 +41,6 @@ php artisan migrate:status
 
 Feature tests cover all required routes, today-only filtering, complete date-ordered retrieval, repeatable seeding, escaped database output, and empty states. Tests use an isolated in-memory SQLite database.
 
-## Submission and hosting
+## Submission
 
-Submit the repository link and the hosted application link. Include migrations and seeders in the repository, but do not commit `.env`, `vendor`, private credentials, or personal data. For production, set `APP_DEBUG=false`, generate a secure `APP_KEY`, configure a persistent database, and run migrations and seeding against that database.
+Submit the GitHub repository link with the required page screenshots. A hosted application link is not required for this activity, as clarified by the professor. Include migrations and seeders in the repository, but do not commit `.env`, `vendor`, private credentials, or personal data.

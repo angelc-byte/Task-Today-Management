@@ -25,14 +25,20 @@ class DatabaseSeeder extends Seeder
             ['title' => 'Organize the project workspace', 'status' => 'completed', 'task_date' => $today->copy()->subDay()],
             ['title' => 'Practice Eloquent date filtering', 'status' => 'pending', 'task_date' => $today->copy()->addDay()],
             ['title' => 'Review Blade template inheritance', 'status' => 'pending', 'task_date' => $today->copy()->addDay()],
-            ['title' => 'Submit the GitHub and hosted links', 'status' => 'pending', 'task_date' => $today->copy()->addDays(2)],
+            ['title' => 'Submit the GitHub repository link', 'status' => 'pending', 'task_date' => $today->copy()->addDays(2)],
         ];
 
+        $seededTitles = array_column($tasks, 'title');
+
+        // Remove previous copies of the sample records before recreating them.
+        // This keeps the seeder repeatable even when it is run on a different day.
+        Task::query()->whereIn('title', [
+            ...$seededTitles,
+            'Submit the GitHub and hosted links',
+        ])->delete();
+
         foreach ($tasks as $task) {
-            Task::query()->updateOrCreate(
-                ['title' => $task['title'], 'task_date' => $task['task_date']],
-                ['status' => $task['status']],
-            );
+            Task::query()->create($task);
         }
     }
 }

@@ -27,7 +27,7 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-See [`tsa3-laravel/README.md`](tsa3-laravel/README.md) for detailed setup, verification, and hosting guidance.
+See [`tsa3-laravel/README.md`](tsa3-laravel/README.md) for detailed setup, verification, and submission guidance.
 
 ## TSA2 CodeIgniter project
 
